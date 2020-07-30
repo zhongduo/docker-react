@@ -2,9 +2,12 @@ language: generic
 sudo: required
 services:
     - docker
-
 before_install:
-    - docker build -f Dockerfile.dev -t zhongduo/docker-react .
-
+    - openssl aes-256-cbc -K $encrypted_995b3e0c524e_key -iv $encrypted_995b3e0c524e_iv -in jimmy-knative-dev-b2b3b46359a7.json.enc -out jimmy-knative-dev-b2b3b46359a7.json -d - docker build -f Dockerfile.dev -t zhongduo/docker-react .
 script:
     - docker run -e CI=true zhongduo/docker-react npm run test
+
+deploy:
+    provider: gae
+    keyfile: "jimmy-knative-dev-b2b3b46359a7.json.enc"
+    project: "jimmy-knative-dev"

@@ -12,3 +12,4 @@ deploy:
     provider: gae
     keyfile: "jimmy-knative-dev-b2b3b46359a7.json"
     project: "jimmy-knative-dev"
+    skip_cleanup: true

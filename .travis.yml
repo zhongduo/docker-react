@@ -10,5 +10,5 @@ script:
 
 deploy:
     provider: gae
-    keyfile: "jimmy-knative-dev-b2b3b46359a7.json.enc"
+    keyfile: "jimmy-knative-dev-b2b3b46359a7.json"
     project: "jimmy-knative-dev"
